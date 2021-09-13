@@ -1,5 +1,6 @@
 package org.launchcode.spaday.controllers;
 
+import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -25,7 +26,7 @@ public class SpaDayController {
     }
 
     @GetMapping(value="")
-    @ResponseBody
+   @ResponseBody
     public String customerForm () {
         String html = "<form method = 'post'>" +
                 "Name: <br>" +
@@ -62,6 +63,11 @@ public class SpaDayController {
                 appropriateFacials.add(facials.get(i));
             }
         }
+
+        model.addAttribute("skintype", skintype);
+        model.addAttribute("name", name);
+        model.addAttribute("manipedi", manipedi);
+        model.addAttribute("appropriateFacials", appropriateFacials);
 
         return "menu";
     }
