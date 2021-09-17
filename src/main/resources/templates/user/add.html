@@ -5,14 +5,18 @@
     <title></title>
 </head>
 <body>
-
+<span th:text="${error}"></span>
 <form method="post" action="/user">
     <label>Email</label>
-    <input type="email" name="email">
+    <input type="email" name="email" value="${email}">
     <label>Username</label>
-    <input type="text" name="username">
+    <input type="text" name="username" value="${username}">
     <label>Password</label>
-    <input type="password" name="password">
+    <input type="password"  name="password">
+    <label>Password verification</label>
+    <input type="password" name="verify">
+    <input type="submit">
+
 </form>
 
 </body>

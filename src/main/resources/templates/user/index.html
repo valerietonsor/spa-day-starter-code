@@ -5,6 +5,23 @@
     <title></title>
 </head>
 <body>
+<a th:href="@{/}">Home</a>
+
+<h1 th:text="'Welcome, ' + ${username} + '!'"></h1>
+<p th:unless="${users} and ${users.size()}">No Users!</p>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Username</th>
+    </tr>
+    </thead>
+    <tr th:each="user : ${users}">
+        <td th:text = "${user.id}"></td>
+        <td th:text = "${user.username}"></td>
+    </tr>
+</table>
 
 </body>
 </html>
